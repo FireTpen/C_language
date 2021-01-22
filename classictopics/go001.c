@@ -20,7 +20,7 @@ int main(void)
 
 int gcd(int x,int y) //最大公约数 为gcd(a,b)=r,r是余数
 {                    //a % b == r,b % r == r1,r % r1 == r2 直至余数等于零,最后的被除数就是最大公约数
-	int r,temp = 0;  
+	int temp = 0;  
 	if(x < y)        //如果a < b,将a,b位置互换，让大的数对小的数取余
 	{                
 		temp = x;
@@ -32,11 +32,11 @@ int gcd(int x,int y) //最大公约数 为gcd(a,b)=r,r是余数
 		return x;
 	}
 	
-	while(r != 0)    //如果余数r等于0，则返回最大公约数
+	while(y != 0)    //如果余数r等于0，则返回最大公约数
 	{
-		r = x % y;
+		temp = x % y;
 		x = y;
-		y = r;
+		y = temp;
 	}
 	return x;
 }
